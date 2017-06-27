@@ -1,31 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .content{
 
   display:flex;
 
 }
 
-
-/*body > div {
-    background: #aaa;
-    display: flex;
-    flex-wrap: wrap;
-}
-body > div > div {
-    flex-grow: 1;
-    width: 33%;
-    height: 100px;
-}
-body > div > div:nth-child(even) {
-    background: #23a;
-}
-body > div > div:nth-child(odd) {
-    background: #49b;
-}*/
-
-
 .questions-container {
 
-  display: flex;
+  /*display: flex;*/
   /*flex-wrap: wrap;*/
   margin-left: 50px;
 
@@ -36,7 +22,7 @@ body > div > div:nth-child(odd) {
   display:flex;
   flex-direction: column;
   /*justify-content: flex-start;*/
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .ng-pristine {
@@ -45,10 +31,27 @@ body > div > div:nth-child(odd) {
 }
 
 .partsoft {
-  height: 200px;
-  line-height: 200px;
+  height: 160px;
+  line-height: 160px;
   text-align: center;
-  border: 2px dashed #000
+  border: 2px dashed #000;
+}
+
+.questions {
+
+  display: inline-flex;
+  width: 30%;
+  height: 164px;
+  margin-left: 26px;
+  margin-bottom: -2px;
+
+}
+
+.question {
+
+  line-height: normal;
+  font-size: 18px;
+
 }
 
 .item {
@@ -60,9 +63,17 @@ body > div > div:nth-child(odd) {
 
 }
 
+.values {
+  margin-top: 20px;
+  font-size: 15px;
+
+
+}
+
 .textd {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-  font-size: 18px
+  font-size: 18px;
+  font-weight: bold;
 }
