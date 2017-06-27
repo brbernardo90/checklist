@@ -1,5 +1,68 @@
-#content{
+.content{
 
   display:flex;
 
+}
+
+
+/*body > div {
+    background: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+}
+body > div > div {
+    flex-grow: 1;
+    width: 33%;
+    height: 100px;
+}
+body > div > div:nth-child(even) {
+    background: #23a;
+}
+body > div > div:nth-child(odd) {
+    background: #49b;
+}*/
+
+
+.questions-container {
+
+  display: flex;
+  /*flex-wrap: wrap;*/
+  margin-left: 50px;
+
+
+}
+
+.headers {
+  display:flex;
+  flex-direction: column;
+  /*justify-content: flex-start;*/
+  width: 100%;
+}
+
+.ng-pristine {
+  width: 198px;
+  margin-bottom: -2px;
+}
+
+.partsoft {
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
+  border: 2px dashed #000
+}
+
+.item {
+
+  /*flex-grow: 1;
+  width: 33%;
+  height: 100px;*/
+  display: list-item;
+
+}
+
+.textd {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  font-size: 18px
 }

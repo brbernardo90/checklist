@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Checklist</title>
+				<script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script>
+        <!-- <script src="js/app.js"></script> -->
+				<link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+      <div class="header">
+        Checklist
+      </div>
+
+
+			<div class="content" ng-app="checklist" ng-controller="ctrl">
+
+				<div class="headers">
+
+					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Hardware'}">
+						<span class="textd">  Hardware </span>
+					</div>
+					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Software'}">
+						<span class="textd">  Software </span>
+					</div>
+          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Interface'}">
+						<span class="textd">  Interface </span>
+					</div>
+					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'DadosConteudo'}">
+						<span class="textd">  Dados do Usuário ou Conteúdo Produzido por ele </span>
+					</div>
+          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Redes Sociais / Grupos'}">
+						<span class="textd">  Redes Sociais / Grupos </span>
+					</div>
+					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Comunicação / Marketing'}">
+						<span class="textd">  Comunicação / Marketing </span>
+					</div>
+          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Colaboração'}">
+						<span class="textd">  Colaboração </span>
+					</div>
+          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Conversação'}">
+						<span class="textd">  Conversação </span>
+					</div>
+				</div>
+
+
+        <div class="questions-container">
+  				<div class="questions"  ng-repeat="item in questions | filter:searchp:strict">
+  					<div class="item">
+  						<div class="question">
+  							{{ item.question }}
+  						</div>
+
+              <div class="values">
+                {{ item.value }}
+              </div>
+  					</div>
+  				</div>
+				</div>
+      </div>
+
+
+				<script>
+
+				var app = angular.module('checklist', []);
+
+				app.controller('ctrl', function($scope, $http) {
+					$http.get("questions.json")
+					.then(function(response) {
+							$scope.questions = response.data;
+					});
+
+					$scope.searchp = "Hardware"
+				});
+				</script>
+    </body>
+</html>
