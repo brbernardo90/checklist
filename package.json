@@ -1,0 +1,24 @@
+{
+  "name": "checklist",
+  "version": "1.0.0",
+  "description": "Checklist concebido na disciplina",
+  "author": "Brayan Bernardo, Felipe, Suelen, Vagner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brbernardo90/checklist.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "http-request": "^1.1.0",
+    "https-request": "^1.1.0",
+    "package.json": "^2.0.1",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
