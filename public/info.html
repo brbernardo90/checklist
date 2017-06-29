@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Checklist</title>
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <!-- <script src="js/angular.min.js"></script> -->
+        <script src="js/app.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body ng-view>
+
+
+      <div class="jumbotron">
+        <h1 class="display-3">checklist</h1>
+        <p class="lead"> Elaborar um modelo para guiar ou avaliar projetos de TI que além de desenvolver uma solução <br/> ou tecnologia também visam ampliar o acesso e maximizar seu impacto. </p>
+        <hr class="my-4">
+        <p>Disciplina: Projeto de Impacto Social em TI.</p>
+        <p>Professor Dr. Eduardo Valle</p>
+        <p>Brayan Bernardo, Felipe, Suelen e Vagner Inacio.</p>
+        <p class="lead">
+          <a class="github-button" href="https://github.com/brbernardo90/checklist" data-size="large" data-show-count="true" aria-label="Follow @brbernardo90/checklist on GitHub">Follow @brbernardo90/checklist</a>
+        </p>
+        <p> <a href="info.html" /> Mais info </a> </p>
+      </div>
+
+      <div class="info"  ng-app="checklist" ng-controller="ctrlinfo">
+
+        <!-- <div ng-repeat="(key,value) in data">
+          <div>{{key}}</div>
+          <div>{{value}}</div>
+        </div> -->
+
+<h2> Quantidade de Questões por Valor </h2>
+<table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Valor</th>
+            <th>Nro Perguntas</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- <div ng-repeat="(key,value) in data"> -->
+
+          <tr ng-repeat="(key,value) in data">
+            <td><span>{{key}}</span></td>
+            <td><span>{{value}}</span></td>
+          </tr>
+
+          <!-- </div> -->
+
+        </tbody>
+        </table>
+
+        <h2> Palavras mais frequentes nas perguntas </h2>
+
+
+          <div class="wordcloud">
+            <img src="img/wordcloud.png" />
+
+          </div>
+      </div>
+
+				<script>
+          app.controller('ctrlinfo', function($scope, $http) {
+            $http.get("valor_total.json")
+            .then(function(response) {
+                $scope.data = response.data;
+            });
+
+            $http.get("valor_por_parte.json")
+            .then(function(response) {
+                $scope.data2 = response.data;
+            });
+
+
+
+            var tag_values = {};
+
+            tag_values["Hardware"] = "#hardware"
+            tag_values["Software"] = "#software"
+            tag_values["Interface"] = "#interface"
+            tag_values["Dados do Usuário ou Conteúdo Produzido por ele"] = "#dados_conteudoUsuario"
+            tag_values["Redes Sociais / Grupos"] = "#redes_sociais"
+            tag_values["Comunicação / Marketing"] = "#comunicação_marketing"
+            tag_values["Colaboração"] = "#colaboração"
+            tag_values["Conversação"] = "#conversação"
+
+            $scope.tag = tag_values
+
+            $scope.get_tag = function(value) {
+                return $scope.tag["Hardware"];
+            };
+
+            $scope.funcitonT = function(value) {
+                alert(value);
+                document.getElementById(value.id).checked =true
+            };
+
+            $scope.searchp = "Hardware"
+          });
+
+
+				</script>
+    </body>
+</html>

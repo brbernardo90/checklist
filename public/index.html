@@ -3,15 +3,17 @@
 
     <head>
         <title>Checklist</title>
-				<!-- <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script> -->
-        <script src="js/angular.min.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <!-- <script src="js/angular.min.js"></script> -->
+        <script src="js/app.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body ng-view>
 
 
       <div class="jumbotron">
@@ -24,6 +26,7 @@
         <p class="lead">
           <a class="github-button" href="https://github.com/brbernardo90/checklist" data-size="large" data-show-count="true" aria-label="Follow @brbernardo90/checklist on GitHub">Follow @brbernardo90/checklist</a>
         </p>
+        <p> <a href="info.html" /> Mais info </a> </p>
       </div>
       <!-- Place this tag where you want the button to render. -->
 
@@ -157,59 +160,27 @@
 
 				<script>
 
-        var last_clicked = "hardware"
-        document.getElementsByClassName("questions-container")[0].classList.toggle(last_clicked + "_check");
-        document.getElementById("tab-" + last_clicked).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
-
-        function toggleCheckbox(element)
-        {
-         if(!element.childNodes[1].checked){
-          element.childNodes[1].checked = !element.childNodes[1].checked
+          var last_clicked = "hardware"
           document.getElementsByClassName("questions-container")[0].classList.toggle(last_clicked + "_check");
           document.getElementById("tab-" + last_clicked).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
 
-          document.getElementsByClassName("questions-container")[0].classList.toggle(element.id + "_check");
-          document.getElementById("tab-" + element.id).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
+          function toggleCheckbox(element)
+          {
+           if(!element.childNodes[1].checked){
+            element.childNodes[1].checked = !element.childNodes[1].checked
+            document.getElementsByClassName("questions-container")[0].classList.toggle(last_clicked + "_check");
+            document.getElementById("tab-" + last_clicked).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
 
-          last_clicked = element.id
-        }
+            document.getElementsByClassName("questions-container")[0].classList.toggle(element.id + "_check");
+            document.getElementById("tab-" + element.id).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
 
-
-        }
-
-				var app = angular.module('checklist', []);
-
-				app.controller('ctrl', function($scope, $http) {
-					$http.get("questions.json")
-					.then(function(response) {
-							$scope.questions = response.data;
-					});
+            last_clicked = element.id
+          }
 
 
-          var tag_values = {};
+          }
 
-          tag_values["Hardware"] = "#hardware"
-          tag_values["Software"] = "#software"
-          tag_values["Interface"] = "#interface"
-          tag_values["Dados do Usuário ou Conteúdo Produzido por ele"] = "#dados_conteudoUsuario"
-          tag_values["Redes Sociais / Grupos"] = "#redes_sociais"
-          tag_values["Comunicação / Marketing"] = "#comunicação_marketing"
-          tag_values["Colaboração"] = "#colaboração"
-          tag_values["Conversação"] = "#conversação"
 
-          $scope.tag = tag_values
-
-          $scope.get_tag = function(value) {
-              return $scope.tag["Hardware"];
-          };
-
-          $scope.funcitonT = function(value) {
-              alert(value);
-              document.getElementById(value.id).checked =true
-          };
-
-					$scope.searchp = "Hardware"
-				});
 				</script>
     </body>
 </html>
