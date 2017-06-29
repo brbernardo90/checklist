@@ -309,6 +309,11 @@ input[id="tab-conversasao"]:checked+div{
   margin: 0 auto;
 }
 
+.wordcloud {
+
+  height: 700px;
+}
+
 .table {
   width: 40%;
   display: block;
@@ -320,9 +325,6 @@ input[id="tab-conversasao"]:checked+div{
   text-align: center;
 }
 
-hr.style1{
-	border-top: 1px solid #8c8b8b;
-}
 
 .info h2 {
   margin-bottom: 30px;
