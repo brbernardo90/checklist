@@ -1,6 +1,6 @@
 # Checklist
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate metus cursus accumsan iaculis. Ut at augue mauris. Etiam elementum nisl et est tempor dapibus.
+Elaborar um modelo para guiar ou avaliar projetos de TI que além de desenvolver uma solução ou tecnologia também visam ampliar o acesso e maximizar seu impacto.
 
 ## Getting Started
 

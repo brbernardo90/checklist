@@ -19,28 +19,28 @@
 
 				<div class="headers">
 
-					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Hardware'}">
-						<span class="textd">  Hardware </span>
+					<div id="hardware" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Hardware'}">
+						<span  class="textd">  Hardware </span>
 					</div>
-					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Software'}">
-						<span class="textd">  Software </span>
+					<div id="software" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Software'}">
+						<span  class="textd">  Software </span>
 					</div>
-          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Interface'}">
-						<span class="textd">  Interface </span>
+          <div id="interface" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Interface'}">
+						<span  class="textd">  Interface </span>
 					</div>
-					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'DadosConteudo'}">
-						<span class="textd">  Dados do Usuário ou Conteúdo Produzido por ele </span>
+					<div id="dadosusuario" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'dadosDoUsuárioOuConteúdoProduzidoPorEle'}">
+						<span  class="textd">  Dados do Usuário </span>
 					</div>
-          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Redes Sociais / Grupos'}">
-						<span class="textd">  Redes Sociais / Grupos </span>
+          <div id="redessociais" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'redesSociais/Grupos'}">
+						<span class="textd">  Redes Sociais </span>
 					</div>
-					<div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Comunicação / Marketing'}">
-						<span class="textd">  Comunicação / Marketing </span>
+					<div id="marketing" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'comunicação/Marketing'}">
+						<span class="textd">  Comunicação/ Marketing </span>
 					</div>
-          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Colaboração'}">
+          <div id="colaboracao" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Colaboração'}">
 						<span class="textd">  Colaboração </span>
 					</div>
-          <div class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Conversação'}">
+          <div id="conversasao" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Conversação'}">
 						<span class="textd">  Conversação </span>
 					</div>
 				</div>
@@ -49,15 +49,36 @@
         <div class="questions-container">
   				<div class="questions"  ng-repeat="item in questions | filter:searchp:strict">
   					<div class="item">
-  						<div class="question">
-  							{{ item.question }}
-  						</div>
 
-              <div class="values">
+
+        				<div class="img">
+        					<img class="left" src="img/deepcrawl.png">
+        				</div>
+        				<div class="value-content">
+        					<label for="value">{{ item.value }}</label>
+                  <div class="question">
+                    <p >{{ item.question }}
+                       <!-- <a class="more hide-for-print" href="http://boxesandarrows.com/competitive-analysis-understanding-the-market-context/" target="_blank" title="Competitive Analysis: Understanding the Market Context">Read more</a> -->
+                    </p>
+                  </div>
+                </div>
+        				<div class="right">
+        				      <div class="checkboxFive">
+                        <input type="checkbox" value="1" id="checkboxFiveInput" name=""/>
+                        <label for="checkboxFiveInput"></label>
+                      </div>
+        				</div>
+
+              <!-- <div class="values">
                 {{ item.value }}
               </div>
-              <div>
-  					</div>
+              <br/>
+
+  						<div class="question">
+  							{{ item.question }}
+  						</div> -->
+              <!-- <div>
+  					</div> -->
   				</div>
 				</div>
       </div>

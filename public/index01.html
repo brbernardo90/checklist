@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Checklist</title>
+				<!-- <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script> -->
+        <script src="js/angular.min.js"></script>
+				<link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+      <div class="header">
+        Checklist
+      </div>
+
+
+			<div class="boss" ng-app="checklist" ng-controller="ctrl">
+
+				<div class="headers">
+
+
+
+           <div class="tab" id="hardware" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Hardware'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-hardware" name="tab-group-1" checked>
+               <div for="tab-hardware" class="partsoft">
+                 <span  class="textd ">  Hardware </span>
+               </div>
+           </div>
+
+           <div class="tab" id="software" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Software'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-software" name="tab-group-1" >
+               <div  class="partsoft" for="tab-software">
+                <span  class="textd">  Software </span>
+              </div>
+           </div>
+
+           <div class="tab" id="interface" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Interface'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-interface" name="tab-group-1" >
+               <div  class="partsoft" for="tab-software">
+                <span  class="textd">  Interface </span>
+              </div>
+           </div>
+
+           <div class="tab" id="dadosusuario" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'dadosDoUsuárioOuConteúdoProduzidoPorEle'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-dadosusuario" name="tab-group-1" >
+               <div  class="partsoft" for="tab-dadosusuario">
+                <span  class="textd">  Dados do Usuário </span>
+              </div>
+           </div>
+
+           <div class="tab" id="redessociais" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'redesSociais/Grupos'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-redessociais" name="tab-group-1" >
+               <div  class="partsoft" for="tab-redessociais">
+                <span  class="textd">  Redes Sociais </span>
+              </div>
+           </div>
+
+           <div class="tab" id="marketing" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'comunicação/Marketing'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-marketing" name="tab-group-1" >
+               <div  class="partsoft" for="tab-marketing">
+                <span  class="textd">  Marketing </span>
+              </div>
+           </div>
+
+           <div class="tab" id="colaboracao" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Colaboração'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-colaboracao" name="tab-group-1" >
+               <div  class="partsoft" for="tab-colaboracao">
+                <span  class="textd">  Colaboração </span>
+              </div>
+           </div>
+
+           <div class="tab" id="conversasao" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Conversação'}" onclick="toggleCheckbox(this)">
+               <input type="radio" id="tab-conversasao" name="tab-group-1" >
+               <div  class="partsoft" for="tab-conversasao">
+                <span  class="textd">  Conversação </span>
+              </div>
+           </div>
+
+					<!-- <div id="software" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Software'}">
+						<span  class="textd">  Software </span>
+					</div> -->
+          <!-- <div id="interface" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Interface'}">
+						<span  class="textd">  Interface </span>
+					</div> -->
+					<!-- <div id="dadosusuario" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'dadosDoUsuárioOuConteúdoProduzidoPorEle'}">
+						<span  class="textd">  Dados do Usuário </span>
+					</div>
+          <div id="redessociais" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'redesSociais/Grupos'}">
+						<span class="textd">  Redes Sociais </span>
+					</div>
+					<div id="marketing" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'comunicação/Marketing'}">
+						<span class="textd">  Comunicação/ Marketing </span>
+					</div>
+          <div id="colaboracao" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Colaboração'}">
+						<span class="textd">  Colaboração </span>
+					</div>
+          <div id="conversasao" class="partsoft" ng-model="searchp.projectPart" ng-click="searchp = {projectPart: 'Conversação'}">
+						<span class="textd">  Conversação </span>
+					</div> -->
+				</div>
+
+
+        <div class="questions-container">
+  				<div class="questions"  ng-repeat="item in questions | filter:searchp:strict">
+  					<div class="item">
+
+
+        				<div class="img">
+        					<img class="left" src="img/deepcrawl.png">
+        				</div>
+        				<div class="value-content">
+        					<label for="value">{{ item.value }}</label>
+                  <div class="question">
+                    <p >{{ item.question }}
+                       <!-- <a class="more hide-for-print" href="http://boxesandarrows.com/competitive-analysis-understanding-the-market-context/" target="_blank" title="Competitive Analysis: Understanding the Market Context">Read more</a> -->
+                    </p>
+                  </div>
+                </div>
+        				<div class="right">
+        				      <div class="checkboxFive">
+                        <input type="checkbox" value="1" id="checkboxFiveInput" name=""/>
+                        <label for="checkboxFiveInput"></label>
+                      </div>
+        				</div>
+
+              <!-- <div class="values">
+                {{ item.value }}
+              </div>
+              <br/>
+
+  						<div class="question">
+  							{{ item.question }}
+  						</div> -->
+              <!-- <div>
+  					</div> -->
+  				</div>
+				</div>
+      </div>
+      <div>
+</div>
+
+				<script>
+
+        var last_clicked = "hardware"
+        document.getElementsByClassName("questions-container")[0].classList.toggle(last_clicked + "_check");
+        document.getElementById("tab-" + last_clicked).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
+
+        function toggleCheckbox(element)
+        {
+         if(!element.childNodes[1].checked){
+          element.childNodes[1].checked = !element.childNodes[1].checked
+          document.getElementsByClassName("questions-container")[0].classList.toggle(last_clicked + "_check");
+          document.getElementById("tab-" + last_clicked).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
+
+          document.getElementsByClassName("questions-container")[0].classList.toggle(element.id + "_check");
+          document.getElementById("tab-" + element.id).nextSibling.nextSibling.childNodes[1].classList.toggle("change-font");
+
+          last_clicked = element.id
+        }
+
+
+        }
+
+				var app = angular.module('checklist', []);
+
+				app.controller('ctrl', function($scope, $http) {
+					$http.get("questions.json")
+					.then(function(response) {
+							$scope.questions = response.data;
+					});
+
+
+          var tag_values = {};
+
+          tag_values["Hardware"] = "#hardware"
+          tag_values["Software"] = "#software"
+          tag_values["Interface"] = "#interface"
+          tag_values["Dados do Usuário ou Conteúdo Produzido por ele"] = "#dados_conteudoUsuario"
+          tag_values["Redes Sociais / Grupos"] = "#redes_sociais"
+          tag_values["Comunicação / Marketing"] = "#comunicação_marketing"
+          tag_values["Colaboração"] = "#colaboração"
+          tag_values["Conversação"] = "#conversação"
+
+          $scope.tag = tag_values
+
+          $scope.get_tag = function(value) {
+              return $scope.tag["Hardware"];
+          };
+
+          $scope.funcitonT = function(value) {
+              alert(value);
+              document.getElementById(value.id).checked =true
+          };
+
+					$scope.searchp = "Hardware"
+				});
+				</script>
+    </body>
+</html>

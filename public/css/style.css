@@ -3,7 +3,13 @@
   padding: 0;
 }
 
-.content{
+body {
+    font-family: 'Open Sans', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.boss{
 
   display:flex;
 
@@ -13,7 +19,6 @@
 
   /*display: flex;*/
   /*flex-wrap: wrap;*/
-  margin-left: 50px;
 
 
 }
@@ -21,36 +26,39 @@
 .headers {
   display:flex;
   flex-direction: column;
+  font-weight: 300;
+  line-height: normal;
   /*justify-content: flex-start;*/
   /*width: 100%;*/
 }
 
 .ng-pristine {
-  width: 198px;
-  margin-bottom: -2px;
+
 }
 
 .partsoft {
-  height: 160px;
-  line-height: 160px;
+  height: 162px;
+  line-height: 162px;
   text-align: center;
-  border: 2px dashed #000;
+  border: 1px solid #f1f1f1;
+  cursor: pointer;
 }
 
 .questions {
 
   display: inline-flex;
   width: 30%;
-  height: 164px;
-  margin-left: 26px;
-  margin-bottom: -2px;
+  height: 152px;
+  padding: 10px 1.25rem 0px;
+  border: 1px solid #f1f1f1;
 
 }
 
 .question {
 
   line-height: normal;
-  font-size: 18px;
+  font-size: 0.9em;
+  margin-top: 7px;
 
 }
 
@@ -59,15 +67,31 @@
   /*flex-grow: 1;
   width: 33%;
   height: 100px;*/
-  display: list-item;
+  display: flex;
+  flex-direction: row;
 
 }
 
-.values {
+.value-content {
+  padding: 0 10px;
+}
+
+.value {
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+
+}
+
+.img img{
+  width: 64px;
+  height: 64px;
+}
 
 
+
+.right {
+  align-self: flex-end;
 }
 
 .textd {
@@ -75,5 +99,199 @@
   vertical-align: middle;
   line-height: normal;
   font-size: 18px;
-  font-weight: bold;
+  color: white;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  transition: font-size 0.1s;
 }
+
+
+.checkboxFive {
+	width: 25px;
+	margin: 20px 0px;
+	position: relative;
+}
+
+.checkboxFive label {
+	cursor: pointer;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 0;
+  	left: 0;
+	background: #eee;
+	border:1px solid #ddd;
+}
+
+.checkboxFive label:after {
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 6px;
+	left: 7px;
+	border: 3px solid #333;
+	border-top: none;
+	border-right: none;
+
+	transform: rotate(-45deg);
+}
+
+.checkboxFive label:hover::after {
+	opacity: 0.5;
+}
+
+.checkboxFive input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+
+.change-font {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#hardware {
+  background: rgba(51,190,183,1);
+}
+
+.hardware_check {
+  background: rgba(51,190,183,0.20);
+
+}
+
+
+#software {
+  background: #40A4D8;
+}
+
+.software_check {
+  background: rgba(64,216,216,0.25);
+
+}
+
+#interface {
+  background: #A164D9;
+}
+
+.interface_check {
+  background: rgba(161,98,217,0.25);
+
+}
+
+#dadosusuario {
+  background: #EE6579;
+}
+
+.dadosusuario_check {
+  background: rgba(238,101,121,0.25);
+}
+
+#redessociais {
+  background: #DB3937;
+}
+
+.redessociais_check {
+  background: rgba(219,57,55,0.20);
+}
+
+#marketing {
+  background: #F46320;
+}
+
+.marketing_check {
+  background: rgba(244,99,32,0.20);
+}
+
+
+#colaboracao {
+  background: #F8A227;
+}
+
+.colaboracao_check {
+  background: rgba(248,162,39,0.20);
+}
+
+#conversasao {
+  background: #B3C126;
+}
+
+.conversasao_check {
+  background: rgba(179,193,38,0.20);
+}
+
+
+.tabs {
+  position: relative;
+  min-height: 200px; /* This part sucks */
+  clear: both;
+  margin: 25px 0;
+}
+.tab {
+  float: left;
+}
+.tab div {
+  /*background: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;*/
+}
+.tab [type=radio] {
+  display: none;
+}
+.content {
+  /*position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc;*/
+}
+/*input[id="tab-1"]:checked ~ div {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+
+input[id="tab-2"]:checked ~ div {
+  background: black;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}*/
+
+/*input[id="tab-hardware"]:checked+div{
+  border: 1px solid black
+}
+
+input[id="tab-software"]:checked+div{
+  border: 1px solid black
+}
+
+input[id="tab-interface"]:checked+div{
+  background-border: black;
+}
+input[id="tab-dadosusuario"]:checked+div{
+   background: black;
+}
+
+input[id="tab-redessociais"]:checked+div{
+  background: black;
+}
+input[id="tab-marketing"]:checked+div{
+   background: black;
+}
+
+input[id="tab-colaboracao"]:checked+div{
+  background: black;
+}
+input[id="tab-conversasao"]:checked+div{
+   background: black;
+}*/

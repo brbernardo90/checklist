@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Checklist</title>
+				<!-- <script src="http://code.angularjs.org/1.0.1/angular-1.0.1.min.js"></script> -->
+        <script src="js/angular.min.js"></script>
+				<link href="css/style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+
+      <div class="tabs">
+       <div class="tab">
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">Tab One</label>
+
+           <div class="content">
+               stuff
+           </div>
+       </div>
+
+       <div class="tab">
+           <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Tab Two</label>
+
+           <div class="content">
+               stuff
+           </div>
+       </div>
+
+        <div class="tab">
+           <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">Tab Three</label>
+
+           <div class="content">
+               stuff
+           </div>
+   </div>
+
+</div>
+
+
+				<script>
+
+
+				var app = angular.module('checklist', []);
+
+				app.controller('ctrl', function($scope, $http) {
+					$http.get("questions.json")
+					.then(function(response) {
+							$scope.questions = response.data;
+					});
+
+
+          var tag_values = {};
+
+          tag_values["Hardware"] = "#hardware"
+          tag_values["Software"] = "#software"
+          tag_values["Interface"] = "#interface"
+          tag_values["Dados do Usuário ou Conteúdo Produzido por ele"] = "#dados_conteudoUsuario"
+          tag_values["Redes Sociais / Grupos"] = "#redes_sociais"
+          tag_values["Comunicação / Marketing"] = "#comunicação_marketing"
+          tag_values["Colaboração"] = "#colaboração"
+          tag_values["Conversação"] = "#conversação"
+
+          $scope.tag = tag_values
+
+          $scope.get_tag = function(value) {
+              return $scope.tag["Hardware"];
+          };
+
+					$scope.searchp = "Hardware"
+				});
+				</script>
+    </body>
+</html>
